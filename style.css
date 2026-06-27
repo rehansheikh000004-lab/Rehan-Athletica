@@ -418,3 +418,58 @@ font-size:40px;
 }
 
 }
+
+/* ===========================
+   REVEAL ANIMATION
+=========================== */
+
+.hidden{
+
+opacity:0;
+
+transform:
+translateY(60px);
+
+transition:1s;
+
+}
+
+.active{
+
+opacity:1;
+
+transform:
+translateY(0);
+
+}
+
+/* ===========================
+   MOBILE NAVIGATION
+=========================== */
+
+nav.show{
+
+display:flex;
+
+position:absolute;
+
+top:90px;
+
+right:20px;
+
+width:220px;
+
+padding:30px;
+
+background:#111;
+
+border-radius:20px;
+
+flex-direction:column;
+
+gap:20px;
+
+box-shadow:
+0 20px 40px rgba(0,0,0,.5);
+
+}

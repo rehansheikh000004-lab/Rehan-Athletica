@@ -473,3 +473,23 @@ box-shadow:
 0 20px 40px rgba(0,0,0,.5);
 
 }
+
+.show{
+
+display:flex !important;
+
+flex-direction:column;
+
+position:absolute;
+
+top:90px;
+
+right:20px;
+
+background:#111;
+
+padding:25px;
+
+border-radius:15px;
+
+}

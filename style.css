@@ -359,3 +359,107 @@ font-size:14px;
 }
 
 }
+
+/* ==========================
+PROGRAMS
+========================== */
+
+.programs{
+
+padding:140px 8%;
+
+}
+
+.section-subtitle{
+
+letter-spacing:5px;
+
+color:#C8A96A;
+
+margin-bottom:15px;
+
+font-size:13px;
+
+}
+
+.programs h2{
+
+font-family:'Bebas Neue';
+
+font-size:80px;
+
+margin-bottom:70px;
+
+}
+
+.program-grid{
+
+display:grid;
+
+grid-template-columns:
+
+repeat(2,1fr);
+
+gap:35px;
+
+}
+
+.program-card{
+
+background:#111;
+
+padding:45px;
+
+border-radius:30px;
+
+transition:.4s;
+
+border:1px solid rgba(255,255,255,.05);
+
+}
+
+.program-card:hover{
+
+transform:translateY(-12px);
+
+border-color:#C8A96A;
+
+}
+
+.program-number{
+
+font-size:70px;
+
+font-family:'Bebas Neue';
+
+color:#C8A96A;
+
+margin-bottom:20px;
+
+}
+
+.program-card h3{
+
+font-size:32px;
+
+margin-bottom:18px;
+
+}
+
+.program-card p{
+
+color:#bdbdbd;
+
+line-height:2;
+
+margin-bottom:25px;
+
+}
+
+.program-card a{
+
+text-decoration:none;
+
+color:#C8A96A;
+
+}

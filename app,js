@@ -1,71 +1,196 @@
-window.onload = function () {
+/* =====================================
+   REHAN ATHLETICA
+   APP.JS
+===================================== */
 
-const loader = document.getElementById("loader");
+/* LOADER */
 
-setTimeout(function(){
+window.addEventListener("load",()=>{
 
-loader.style.display = "none";
+const loader=document.createElement("div");
 
-},1500);
+const existing=document.getElementById("loader");
 
-};
+if(existing){
 
-// Mobile Menu
+setTimeout(()=>{
 
-const menu=document.querySelector(".menu");
+existing.style.opacity="0";
 
-const nav=document.querySelector("nav");
+existing.style.visibility="hidden";
 
-if(menu){
-
-menu.onclick=function(){
-
-nav.classList.toggle("show");
-
-}
-
-}
-
-// Floating Image
-
-const hero=document.querySelector(".hero-image img");
-
-if(hero){
-
-let up=true;
-
-setInterval(function(){
-
-if(up){
-
-hero.style.transform="translateY(-10px)";
-
-}else{
-
-hero.style.transform="translateY(10px)";
-
-}
-
-up=!up;
-
-},2500);
-
-}
-
-// Header Scroll
-
-window.addEventListener("scroll",function(){
-
-const header=document.querySelector("header");
-
-if(window.scrollY>40){
-
-header.style.background="rgba(0,0,0,.9)";
-
-}else{
-
-header.style.background="rgba(10,10,10,.6)";
+},1800);
 
 }
 
 });
+
+/* ==========================
+MOBILE MENU
+========================== */
+
+const menuBtn=document.querySelector(".menu-btn");
+
+const nav=document.querySelector("nav");
+
+menuBtn.addEventListener("click",()=>{
+
+nav.classList.toggle("active");
+
+});
+
+/* ==========================
+HEADER SCROLL
+========================== */
+
+const header=document.querySelector("header");
+
+window.addEventListener("scroll",()=>{
+
+if(window.scrollY>60){
+
+header.classList.add("sticky");
+
+}
+
+else{
+
+header.classList.remove("sticky");
+
+}
+
+});
+
+/* ==========================
+CURSOR
+========================== */
+
+const cursor=document.createElement("div");
+
+cursor.classList.add("cursor");
+
+document.body.appendChild(cursor);
+
+document.addEventListener("mousemove",(e)=>{
+
+cursor.style.left=e.clientX+"px";
+
+cursor.style.top=e.clientY+"px";
+
+});
+
+/* ==========================
+BUTTON HOVER
+========================== */
+
+const buttons=document.querySelectorAll(
+
+".primary-btn,.secondary-btn"
+
+);
+
+buttons.forEach(button=>{
+
+button.addEventListener("mouseenter",()=>{
+
+cursor.style.transform="scale(2)";
+
+});
+
+button.addEventListener("mouseleave",()=>{
+
+cursor.style.transform="scale(1)";
+
+});
+
+});
+
+/* ==========================
+IMAGE FLOAT
+========================== */
+
+const heroImage=document.querySelector(
+
+".hero-right img"
+
+);
+
+let direction=1;
+
+setInterval(()=>{
+
+if(heroImage){
+
+heroImage.style.transform=
+
+`translateY(${direction*10}px)`;
+
+direction*=-1;
+
+}
+
+},2500);
+
+/* ==========================
+SCROLL REVEAL
+========================== */
+
+const reveal=document.querySelectorAll(
+
+".hero-left,.hero-right"
+
+);
+
+const observer=new IntersectionObserver(
+
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},
+
+{
+
+threshold:0.2
+
+}
+
+);
+
+reveal.forEach(item=>{
+
+item.classList.add("hidden");
+
+observer.observe(item);
+
+});
+
+/* ==========================
+TITLE ANIMATION
+========================== */
+
+let dots=0;
+
+setInterval(()=>{
+
+dots++;
+
+if(dots>3){
+
+dots=0;
+
+}
+
+document.title=
+
+"REHAN ATHLETICA"+".".repeat(dots);
+
+},1000);

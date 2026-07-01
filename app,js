@@ -29,15 +29,18 @@ existing.style.visibility="hidden";
 MOBILE MENU
 ========================== */
 
-const menuBtn=document.querySelector(".menu-btn");
+const menuBtn = document.querySelector(".menu-btn");
+const nav = document.querySelector("nav");
 
-const nav=document.querySelector("nav");
+if(menuBtn){
 
 menuBtn.addEventListener("click",()=>{
 
 nav.classList.toggle("active");
 
 });
+
+}
 
 /* ==========================
 HEADER SCROLL
@@ -109,27 +112,21 @@ cursor.style.transform="scale(1)";
 IMAGE FLOAT
 ========================== */
 
-const heroImage=document.querySelector(
+const heroImage=document.querySelector(".hero-right img");
 
-".hero-right img"
-
-);
+if(heroImage){
 
 let direction=1;
 
 setInterval(()=>{
 
-if(heroImage){
-
-heroImage.style.transform=
-
-`translateY(${direction*10}px)`;
+heroImage.style.transform=`translateY(${direction*10}px)`;
 
 direction*=-1;
 
-}
-
 },2500);
+
+}
 
 /* ==========================
 SCROLL REVEAL
